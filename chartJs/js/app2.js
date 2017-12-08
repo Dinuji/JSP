@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$.ajax({
-		url: "http://uoc-mydb-instance.ciaqpoqp6i0b.us-east-2.rds.amazonaws.com:3306/JSP/chartJs/data2.php",
+		url: "http://uoc-mydb-instance.ciaqpoqp6i0b.us-east-2.rds.amazonaws.com:3306//JSP/chartJs/data2.php",
 		method:"GET",
 		success: function(data) {
 			console.log(data);
