@@ -62,6 +62,10 @@ require("../DB/dbcon.php");
 </div>
 
 <br>
+                      <a href="#profile.php" target="abc">
+                  <input class="bttn" type="submit" value="Get PDF" name="pdf"> </input></a>
+
+<br>
 
 </center>
   </body>
