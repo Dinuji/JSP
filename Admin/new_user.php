@@ -26,20 +26,20 @@ require("../DB/dbcon.php");
                 
                 <tr>
                     <td style=" width: 200px"><label class="">Name : </label></td>
-                    <td style=" width: 200px"><input type="text" class="" name="name" placeholder="Enter Name"></td>
+                    <td style=" width: 200px"><input type="text" name="name" placeholder="Enter Name"></td>
                 </tr>
                 <tr>
                     <td style=" width: 200px"><label class="">User Name : </label></td>
-                    <td style=" width: 200px"><input type="text" class="" name="username" placeholder="Enter User Name"></td>
+                    <td style=" width: 200px"><input type="text"  name="username" placeholder="Enter User Name"></td>
                 </tr>
                 
                 <tr>
                     <td style=" width: 200px"><label class="">Password : </label></td>
-                    <td style=" width: 200px"><input type="password" class="" name="password" placeholder="Enter Password"></td>
+                    <td style=" width: 200px"><input type="password"  name="password" placeholder="Minimum lenghth is 7"></td>
                 </tr>
                 <tr>
                     <td style=" width: 200px"><label class="">Retype Password : </label></td>
-                    <td style=" width: 200px"><input type="password" class="" name="repassword" placeholder="Retype Password"></td>
+                    <td style=" width: 200px"><input type="password"  name="repassword" placeholder=Minimum lenghth is 7"></td>
                 </tr>
                 <tr>
                     <td style=" width: 200px"><label class="">Type : </label></td>

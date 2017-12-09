@@ -28,29 +28,29 @@ require("../DB/dbcon.php");
                 
                 <tr>
                     <td style=" width: 200px"><label class="">Shop Name : </label></td>
-                    <td style=" width: 200px"><input type="text" class="" name="Sname" placeholder="Enter Shop Name"></td>
+                    <td style=" width: 200px"><input type="text"  name="Sname" placeholder="Enter Shop Name"></td>
                 </tr>
                 <tr>
                     <td style=" width: 200px"><label class="">Owner Name : </label></td>
-                    <td style=" width: 200px"><input type="text" class="" name="Oname" placeholder="Enter Owner's Name"></td>
+                    <td style=" width: 200px"><input type="text" name="Oname" placeholder="Enter Owner's Name"></td>
                 </tr>
 
                 
                 <tr>
                     <td style=" width: 200px"><label class="">Owner NIC : </label></td>
-                    <td style=" width: 200px"><input type="text" maxlength="10"class="" name="NIC" placeholder="Enter NIC"></td>
+                    <td style=" width: 200px"><input type="text" maxlength="10" name="NIC" placeholder="Enter NIC"></td>
                 </tr>
                 
                 
                 
                 <tr>
                     <td style=" width: 200px"><label class="">Contact Number : </label></td>
-                    <td style=" width: 200px"><input type="number" maxlength="10"class="" name="TPNum" placeholder="Enter TP No"></td>
+                    <td style=" width: 200px"><input type="number" maxlength="10" name="TPNum" placeholder="Enter TP No"></td>
                 </tr>
 
                 <tr>
                     <td style=" width: 200px"><label class="">Address : </label></td>
-                    <td style=" width: 200px"><input type="text" class="" name="address" placeholder="Enter Address"></td>
+                    <td style=" width: 200px"><input type="text"  name="address" placeholder="Enter Address"></td>
                 </tr>
                 <tr>
                     <td style=" width: 200px"><label class="">Route Id: </label></td>

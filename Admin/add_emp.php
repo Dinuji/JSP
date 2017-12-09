@@ -26,11 +26,11 @@ require("../DB/dbcon.php");
                 
                 <tr>
                     <td style=" width: 200px"><label class="">First Name : </label></td>
-                    <td style=" width: 200px"><input type="text" class="" name="FName" placeholder="Enter Name"></td>
+                    <td style=" width: 200px"><input type="text" maxlength="40" name="FName" placeholder="Enter Name"></td>
                 </tr>
                 <tr>
                     <td style=" width: 200px"><label class="">Last Name : </label></td>
-                    <td style=" width: 200px"><input type="text" class="" name="LName" placeholder="Enter User Name"></td>
+                    <td style=" width: 200px"><input type="text" maxlength="30" name="LName" placeholder="Enter User Name"></td>
                 </tr>
 
                 <tr>
@@ -42,12 +42,12 @@ require("../DB/dbcon.php");
                 </tr>
                 <tr>
                     <td style=" width: 200px"><label class="">NIC : </label></td>
-                    <td style=" width: 200px"><input type="text" maxlength="10"class="" name="Nic" placeholder="Enter NIC"></td>
+                    <td style=" width: 200px"><input type="text" maxlength="10" minlength="10" class="" name="Nic" placeholder="Enter NIC"></td>
                 </tr>
                 
                 <tr>
                     <td style=" width: 200px"><label class=""> Date Of Birth: </label></td>
-                    <td style=" width: 200px"><input type="date" name="Dob"></td>
+                    <td style=" width: 200px"><input type="date" name="Dob" min="1937-01-01" max="2001.01.01"></td>
                 </tr>
                 <tr>
                     <td style=" width: 200px"><label class="">Type : </label></td>

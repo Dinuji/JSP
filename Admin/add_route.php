@@ -28,12 +28,12 @@ require("../DB/dbcon.php");
                 
                 <tr>
                     <td style=" width: 200px"><label class="">Route Name : </label></td>
-                    <td style=" width: 200px"><input type="text" class="" name="Rname" placeholder="Enter Route Name"></td>
+                    <td style=" width: 200px"><input type="text" name="Rname" placeholder="Enter Route Name"></td>
                 </tr>
 
                 <tr>
                     <td style=" width: 200px"><label class="">Distance : </label></td>
-                    <td style=" width: 200px"><input type="text" class="" name="Distance" placeholder="Enter Distance"></td>
+                    <td style=" width: 200px"><input type="text" name="Distance" placeholder="Number of Kilometers"></td>
                 </tr>
 
                 <tr><td></td><td></td></tr>
