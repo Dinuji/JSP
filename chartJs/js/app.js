@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$.ajax({
-		url: "http://ec2-18-217-208-126.us-east-2.compute.amazonaws.com/JSP/chartJs/data.php",
+		url: "http://localhost//JSP/chartJs/data.php",
 		method:"GET",
 		success: function(data) {
 			console.log(data);

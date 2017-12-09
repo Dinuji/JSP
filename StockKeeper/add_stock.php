@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Add stock</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/main.css">
   </head>
   <body>
     <form action="../sources/save_add_stock.php" method="post">

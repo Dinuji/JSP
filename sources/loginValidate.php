@@ -1,8 +1,8 @@
 <?php
 	
-	$dbhost = "uoc-mydb-instance.ciaqpoqp6i0b.us-east-2.rds.amazonaws.com:3306";
-	$dbuser = "jsproot";
-	$dbpass = "jsprootpass";
+	$dbhost = "localhost";
+	$dbuser = "root";
+	$dbpass = "";
 	$errMsg = "";
 	
 	$conn = mysql_connect($dbhost,$dbuser,$dbpass);

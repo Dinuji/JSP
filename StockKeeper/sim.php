@@ -68,7 +68,7 @@ require("../DB/dbcon.php");
 
 <div class="div">
 <br>
-        <form action="#../sources/save_add_shop.php" method="post">
+        <form action="../sources/add_sim.php" method="post">
             <table border="0">
                 
                 <tr>
@@ -101,7 +101,7 @@ require("../DB/dbcon.php");
 <div class="div">
 <br>
 
-            <form action="#../sources/save_add_shop.php" method="post">
+            <form action="../sources/transfer_sim.php" method="post">
             <table border="0">
                 
                 <tr>
@@ -133,7 +133,7 @@ require("../DB/dbcon.php");
                 <tr><td></td><td></td></tr>
                 <tr><td></td><td></td></tr>
                 <tr>
-                    <td style=" width: 250px"><input class="bttn" type="submit" value="Tranfer" name="submit"></td>
+                    <td style=" width: 250px"><input class="bttn" type="submit" value="Transfer" name="submit"></td>
                     <td style=" width: 200px"> <input class="bttn" type="submit" name="cancel" id="button" value="Cancel" onclick="clear()"></td>
             </tr>
                 
@@ -152,7 +152,7 @@ require("../DB/dbcon.php");
 <div class="div">
 <br>
 
-    <form action="#../sources/save_add_shop.php" method="post">
+    <form action="../sources/add_sim_customer_details.php" method="post">
             <table border="0">
                 
                 <tr>
@@ -165,7 +165,7 @@ require("../DB/dbcon.php");
                 </tr>
                 <tr>
                     <td style=" width: 200px"><label class="">Customer's NIC : </label></td>
-                    <td style=" width: 200px"><input type="text"  name="nic" placeholder="Enter Customer's NIC"></td>
+                    <td style=" width: 200px"><input type="text"  name="nic" maxlength="9" placeholder="Enter Customer's NIC">V</td>
                 </tr>
                 <tr><td></td><td></td></tr>
                 <tr><td></td><td></td></tr>

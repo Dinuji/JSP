@@ -4,9 +4,9 @@
 header('Content-Type: application/json');
 
 //database
-define('DB_HOST', 'uoc-mydb-instance.ciaqpoqp6i0b.us-east-2.rds.amazonaws.com:3306');
-define('DB_USERNAME','jsproot');
-define('DB_PASSWORD', 'jsprootpass');
+define('DB_HOST', 'localhost');
+define('DB_USERNAME','root');
+define('DB_PASSWORD', '');
 define('DB_NAME', 'jsp');
 
 //get connection

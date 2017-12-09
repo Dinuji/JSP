@@ -23,11 +23,7 @@
                           <img  src="../Images/StockKeeperImages/damage.png" width="120px" height="120px" margin="10px"><br><br>
                           <div class="bttext">Damage Stock</div>
                         </div></a>
-                        <!--<a href="notifications.php"><div class="button">
-                          <img  src="../Images/StockKeeperImages/notification.png" width="120px" height="120px" margin="10px"><br><br>
-                          <div class="bttext">Notifications</div>
-                        </div></a> -->
-
+                        
                   </div>     
 
           
