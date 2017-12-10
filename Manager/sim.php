@@ -56,11 +56,10 @@ require("../DB/dbcon.php");
 	</table>
 
     
-			              <br>
+			                     <br>
                     <form action="pdf_sim.php" method="post">
                   <input class="bttn" type="submit" value="Get PDF" name="generate_pdf"> </input>
                     </form>
-
 <br>
 
 </div>
