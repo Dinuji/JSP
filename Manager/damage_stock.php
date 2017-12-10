@@ -59,8 +59,10 @@ require("../DB/dbcon.php");
 
 
 
-
-
+                                <br>
+                    <form action="sales zero.php" method="post">
+                  <input class="bttn" type="submit" value="Get PDF" name="generate_pdf"> </input>
+                    </form>
 
                 <br>
                 

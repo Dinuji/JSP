@@ -14,10 +14,21 @@ if (isset($_POST['Start20']) && isset($_POST['End20']))
 					$sql= "insert into main_stock_deatils(`Type`,`Serial`) values ('".$Type."','".$i."')";
 
 					$result=mysql_query($sql);}
+
+					//main stock summary update
+		$sql3="SELECT * FROM mainstock_summary WHERE Type = '$Type'";
+		$result3=mysql_query($sql3);
+		if(mysql_num_rows($result3)>0){
 				
 
 		$sql2="UPDATE mainstock_summary set RemainingAmount=RemainingAmount+($End20-$Start20) where Type = 20";
-		mysql_query($sql2);
+		mysql_query($sql2);}
+
+		else{
+			$diff=$End20-$Start20;
+			$sql4="INSERT INTO mainstock_summary VALUES('20','$diff','100','50')";
+			mysql_query($sql4);
+		}
 		
 	}
 
@@ -33,8 +44,19 @@ if (isset($_POST['Start50']) && isset($_POST['End50']))
 
 					$result=mysql_query($sql);}
 
+		$sql3="SELECT * FROM mainstock_summary WHERE Type = '$Type'";
+		$result3=mysql_query($sql3);
+		if(mysql_num_rows($result3)>0){
+				
+
 		$sql2="UPDATE mainstock_summary set RemainingAmount=RemainingAmount+($End50-$Start50) where Type = 50";
-		mysql_query($sql2);
+		mysql_query($sql2);}
+
+		else{
+			$diff=$End50-$Start50;
+			$sql4="INSERT INTO mainstock_summary VALUES('50','$diff','100','50')";
+			mysql_query($sql4);
+		}
 				}
 
 if (isset($_POST['Start100']) && isset($_POST['End100']))
@@ -47,9 +69,22 @@ if (isset($_POST['Start100']) && isset($_POST['End100']))
 					$sql= "insert into main_stock_deatils(`Type`,`Serial`) values ('".$Type."','".$i."')";
 
 					$result=mysql_query($sql);}
+
+
+		$sql3="SELECT * FROM mainstock_summary WHERE Type = '$Type'";
+		$result3=mysql_query($sql3);
+		if(mysql_num_rows($result3)>0){
+				
+
 		$sql2="UPDATE mainstock_summary set RemainingAmount=RemainingAmount+($End100-$Start100) where Type = 100";
-		mysql_query($sql2);
-				}
+		mysql_query($sql2);}
+
+		else{
+			$diff=$End100-$Start100;
+			$sql4="INSERT INTO mainstock_summary VALUES('100','$diff','100','50')";
+			mysql_query($sql4);
+		}
+	}
 
 if (isset($_POST['Start200']) && isset($_POST['End200']))
 	{
@@ -61,9 +96,22 @@ if (isset($_POST['Start200']) && isset($_POST['End200']))
 					$sql= "insert into main_stock_deatils(`Type`,`Serial`) values ('".$Type."','".$i."')";
 
 					$result=mysql_query($sql);}
-			$sql2="UPDATE mainstock_summary set RemainingAmount=RemainingAmount+($End200-$Start200) where Type = 200";
-		mysql_query($sql2);
-				}
+
+
+			$sql3="SELECT * FROM mainstock_summary WHERE Type = '$Type'";
+		$result3=mysql_query($sql3);
+		if(mysql_num_rows($result3)>0){
+				
+
+		$sql2="UPDATE mainstock_summary set RemainingAmount=RemainingAmount+($End200-$Start200) where Type = 200";
+		mysql_query($sql2);}
+
+		else{
+			$diff=$End200-$Start200;
+			$sql4="INSERT INTO mainstock_summary VALUES('200','$diff','100','50')";
+			mysql_query($sql4);
+		}
+	}
 
 if (isset($_POST['Start500']) && isset($_POST['End500']))
 	{
@@ -75,9 +123,24 @@ if (isset($_POST['Start500']) && isset($_POST['End500']))
 					$sql= "insert into main_stock_deatils(`Type`,`Serial`) values ('".$Type."','".$i."')";
 
 					$result=mysql_query($sql);}
-					$sql2="UPDATE mainstock_summary set RemainingAmount=RemainingAmount+($End500-$Start500) where Type = 500";
-		mysql_query($sql2);
-				}
+
+
+					$sql3="SELECT * FROM mainstock_summary WHERE Type = '$Type'";
+		$result3=mysql_query($sql3);
+		if(mysql_num_rows($result3)>0){
+				
+
+		$sql2="UPDATE mainstock_summary set RemainingAmount=RemainingAmount+($End500-$Start500) where Type = 500";
+		mysql_query($sql2);}
+
+		else{
+			$diff=$End500-$Start500;
+			$sql4="INSERT INTO mainstock_summary VALUES('500','$diff','100','50')";
+			mysql_query($sql4);
+		}
+	}
+
+	
 
 if (isset($_POST['Start1000']) && isset($_POST['End1000']))
 	{
@@ -89,8 +152,21 @@ if (isset($_POST['Start1000']) && isset($_POST['End1000']))
 					$sql= "insert into main_stock_deatils(`Type`,`Serial`) values ('".$Type."','".$i."')";
 
 					$result=mysql_query($sql);}
-					$sql2="UPDATE mainstock_summary set RemainingAmount=RemainingAmount+($End1000-$Start1000) where Type = 1000";
-		mysql_query($sql2);
+
+
+					$sql3="SELECT * FROM mainstock_summary WHERE Type = '$Type'";
+		$result3=mysql_query($sql3);
+		if(mysql_num_rows($result3)>0){
+				
+
+		$sql2="UPDATE mainstock_summary set RemainingAmount=RemainingAmount+($End1000-$Start1000) where Type = 1000";
+		mysql_query($sql2);}
+
+		else{
+			$diff=$End1000-$Start1000;
+			$sql4="INSERT INTO mainstock_summary VALUES('1000','$diff','100','50')";
+			mysql_query($sql4);
+		}
 				}
 
 					

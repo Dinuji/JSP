@@ -10,8 +10,7 @@ if(isset($_POST['submit'])){
 	$no=$_POST['no'];
 	$pef=$_POST['pef'];
 	$nic=$_POST['nic'];
-	$v = "V";
-	$Nic = $nic.$v;
+	
 	
 
 
@@ -24,7 +23,7 @@ if(isset($_POST['submit'])){
 
     else{
 	
-	$sql="UPDATE sim set PEF_Id=$pef, Customer_NIC=$Nic WHERE SIM_No=$no";
+	$sql="UPDATE sim set PEF_Id=$pef, Customer_NIC=$nic WHERE SIM_No=$no";
 	mysql_query($sql);
 	
 	echo "Customer Details were added succesfully.";

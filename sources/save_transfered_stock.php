@@ -98,6 +98,10 @@ if(isset($_POST['transfer']))
              $sql_query7="INSERT INTO graphtable2(Type,Count) VALUES($card_Type,(SELECT COUNT(*) FROM transferred_stock WHERE Type=$card_Type))" ;
                mysql_query($sql_query7);}
 
+
+
+
+
                //Buffer Level
              $sqlLimit="SELECT * FROM mainstock_summary WHERE Type=20";
              $res=mysql_query($sqlLimit);
@@ -121,33 +125,30 @@ if(isset($_POST['transfer']))
 
 
 //for 50
-    if ($transfered_amount50!=null or $transfered_amount50!=0) 
-    {
-        
-             while ($data = mysql_fetch_array($result2)) 
+    if($transfered_amount50 !=null or $transfered_amount50!=0)
+  {
+            while ($data = mysql_fetch_array($result2)) 
             {
                 $card_Type = $data['Type'];
                 $card_Serial = $data['Serial'];
                
 
-               $sql_insert_query2 = "insert into transferred_stock values
+               $sql_insert_query1 = "insert into transferred_stock values
             ('$transfered_date','$card_Type','$card_Serial','$transfered_fse_id')";
-             mysql_query($sql_insert_query2);
+             mysql_query($sql_insert_query1);
                
-            $sql_delete_query2 = "delete from main_stock_deatils where Serial = $card_Serial";
-             mysql_query($sql_delete_query2);
-
+              $sql_delete_query1 = "delete from main_stock_deatils where Serial = $card_Serial";
+             mysql_query($sql_delete_query1);
                array_push($card_range2, $card_Serial);
-              
+
             }
             //decrease th remaining amount in mainstock_summary
             $sql_update_query1 = "UPDATE mainstock_summary set RemainingAmount=RemainingAmount-$transfered_amount50 where Type=50";
-               mysql_query($sql_update_query1);
-
+              mysql_query($sql_update_query1);
 
             $serial_range2 = min($card_range2) ." to". max($card_range2);
 
-
+            //update, insert to graphtable1 to draw the barchart 
             $sql_query8 = "SELECT * FROM graphtable1 WHERE Id = $transfered_fse_id";
             $result8=mysql_query($sql_query8);
             if(mysql_num_rows($result8) == 1){
@@ -159,6 +160,7 @@ if(isset($_POST['transfer']))
             $sql_query6="INSERT INTO graphtable1(Id,Count) VALUES($transfered_fse_id,(SELECT COUNT(*) FROM transferred_stock WHERE FSEId=$transfered_fse_id))" ;
              mysql_query($sql_query6);}
 
+             //update,insert into graphtable2 to draw barchart2
              $sql_query9 = "SELECT * FROM graphtable2 WHERE Type = $card_Type";
              $result9=mysql_query($sql_query9);
             if(mysql_num_rows($result9) == 1){
@@ -170,8 +172,12 @@ if(isset($_POST['transfer']))
              $sql_query7="INSERT INTO graphtable2(Type,Count) VALUES($card_Type,(SELECT COUNT(*) FROM transferred_stock WHERE Type=$card_Type))" ;
                mysql_query($sql_query7);}
 
-               //buffer level
-               $sqlLimit="SELECT * FROM mainstock_summary WHERE Type=50";
+
+
+
+
+               //Buffer Level
+             $sqlLimit="SELECT * FROM mainstock_summary WHERE Type=50";
              $res=mysql_query($sqlLimit);
              while ($data = mysql_fetch_array($res)) 
             {
@@ -185,34 +191,37 @@ if(isset($_POST['transfer']))
                     <b>The stock of Rs.50 has reached the buffer level. Please Refill.</b>
                     </div>";
                   }
-
-        
-}
+                
+               
+            
     }
+  }
 
 //for 100
-    if ($transfered_amount100!=null or $transfered_amount100!=0) 
-    {
-
-             while ($data = mysql_fetch_array($result3)) 
+   if($transfered_amount100 !=null or $transfered_amount100!=0)
+  {
+            while ($data = mysql_fetch_array($result3)) 
             {
                 $card_Type = $data['Type'];
                 $card_Serial = $data['Serial'];
                
 
-               $sql_insert_query3 = "insert into transferred_stock values
+               $sql_insert_query1 = "insert into transferred_stock values
             ('$transfered_date','$card_Type','$card_Serial','$transfered_fse_id')";
-             mysql_query($sql_insert_query3);
+             mysql_query($sql_insert_query1);
                
-            $sql_delete_query3 = "delete from main_stock_deatils where Serial = $card_Serial";
-             mysql_query($sql_delete_query3);
+              $sql_delete_query1 = "delete from main_stock_deatils where Serial = $card_Serial";
+             mysql_query($sql_delete_query1);
                array_push($card_range3, $card_Serial);
-              
+
             }
+            //decrease th remaining amount in mainstock_summary
             $sql_update_query1 = "UPDATE mainstock_summary set RemainingAmount=RemainingAmount-$transfered_amount100 where Type=100";
-               mysql_query($sql_update_query1);
+              mysql_query($sql_update_query1);
 
             $serial_range3 = min($card_range3) ." to". max($card_range3);
+
+            //update, insert to graphtable1 to draw the barchart 
             $sql_query8 = "SELECT * FROM graphtable1 WHERE Id = $transfered_fse_id";
             $result8=mysql_query($sql_query8);
             if(mysql_num_rows($result8) == 1){
@@ -224,6 +233,7 @@ if(isset($_POST['transfer']))
             $sql_query6="INSERT INTO graphtable1(Id,Count) VALUES($transfered_fse_id,(SELECT COUNT(*) FROM transferred_stock WHERE FSEId=$transfered_fse_id))" ;
              mysql_query($sql_query6);}
 
+             //update,insert into graphtable2 to draw barchart2
              $sql_query9 = "SELECT * FROM graphtable2 WHERE Type = $card_Type";
              $result9=mysql_query($sql_query9);
             if(mysql_num_rows($result9) == 1){
@@ -235,8 +245,12 @@ if(isset($_POST['transfer']))
              $sql_query7="INSERT INTO graphtable2(Type,Count) VALUES($card_Type,(SELECT COUNT(*) FROM transferred_stock WHERE Type=$card_Type))" ;
                mysql_query($sql_query7);}
 
-               //buffer level
-               $sqlLimit="SELECT * FROM mainstock_summary WHERE Type=100";
+
+
+
+
+               //Buffer Level
+             $sqlLimit="SELECT * FROM mainstock_summary WHERE Type=100";
              $res=mysql_query($sqlLimit);
              while ($data = mysql_fetch_array($res)) 
             {
@@ -250,33 +264,37 @@ if(isset($_POST['transfer']))
                     <b>The stock of Rs.100 has reached the buffer level. Please Refill.</b>
                     </div>";
                   }
-        }   
+                
+               
+            
     }
+  }
 
 //for 200
-    if ($transfered_amount200!=null or $transfered_amount200!=0) 
-    {
-        
-             while ($data = mysql_fetch_array($result4)) 
+    if($transfered_amount200 !=null or $transfered_amount200!=0)
+  {
+            while ($data = mysql_fetch_array($result4)) 
             {
                 $card_Type = $data['Type'];
                 $card_Serial = $data['Serial'];
                
 
-               $sql_insert_query4 = "insert into transferred_stock values
+               $sql_insert_query1 = "insert into transferred_stock values
             ('$transfered_date','$card_Type','$card_Serial','$transfered_fse_id')";
-             mysql_query($sql_insert_query4);
+             mysql_query($sql_insert_query1);
                
-               $sql_delete_query4 = "delete from main_stock_deatils where Serial = $card_Serial";
-             mysql_query($sql_delete_query4);
-
+              $sql_delete_query1 = "delete from main_stock_deatils where Serial = $card_Serial";
+             mysql_query($sql_delete_query1);
                array_push($card_range4, $card_Serial);
-              
+
             }
+            //decrease th remaining amount in mainstock_summary
             $sql_update_query1 = "UPDATE mainstock_summary set RemainingAmount=RemainingAmount-$transfered_amount200 where Type=200";
-               mysql_query($sql_update_query1);
+              mysql_query($sql_update_query1);
 
             $serial_range4 = min($card_range4) ." to". max($card_range4);
+
+            //update, insert to graphtable1 to draw the barchart 
             $sql_query8 = "SELECT * FROM graphtable1 WHERE Id = $transfered_fse_id";
             $result8=mysql_query($sql_query8);
             if(mysql_num_rows($result8) == 1){
@@ -288,6 +306,7 @@ if(isset($_POST['transfer']))
             $sql_query6="INSERT INTO graphtable1(Id,Count) VALUES($transfered_fse_id,(SELECT COUNT(*) FROM transferred_stock WHERE FSEId=$transfered_fse_id))" ;
              mysql_query($sql_query6);}
 
+             //update,insert into graphtable2 to draw barchart2
              $sql_query9 = "SELECT * FROM graphtable2 WHERE Type = $card_Type";
              $result9=mysql_query($sql_query9);
             if(mysql_num_rows($result9) == 1){
@@ -299,8 +318,12 @@ if(isset($_POST['transfer']))
              $sql_query7="INSERT INTO graphtable2(Type,Count) VALUES($card_Type,(SELECT COUNT(*) FROM transferred_stock WHERE Type=$card_Type))" ;
                mysql_query($sql_query7);}
 
-               //buffer level
-               $sqlLimit="SELECT * FROM mainstock_summary WHERE Type=200";
+
+
+
+
+               //Buffer Level
+             $sqlLimit="SELECT * FROM mainstock_summary WHERE Type=200";
              $res=mysql_query($sqlLimit);
              while ($data = mysql_fetch_array($res)) 
             {
@@ -314,35 +337,37 @@ if(isset($_POST['transfer']))
                     <b>The stock of Rs.200 has reached the buffer level. Please Refill.</b>
                     </div>";
                   }
-}
+                
+               
+            
     }
+  }
 
 //for 500
-    if ($transfered_amount500!=null or $transfered_amount500!=0) 
-    {
-        
-             while ($data = mysql_fetch_array($result5)) 
+    if($transfered_amount500 !=null or $transfered_amount500!=0)
+  {
+            while ($data = mysql_fetch_array($result5)) 
             {
                 $card_Type = $data['Type'];
                 $card_Serial = $data['Serial'];
                
 
-               $sql_insert_query5 = "insert into transferred_stock values
+               $sql_insert_query1 = "insert into transferred_stock values
             ('$transfered_date','$card_Type','$card_Serial','$transfered_fse_id')";
-             mysql_query($sql_insert_query5);
+             mysql_query($sql_insert_query1);
                
-               $sql_delete_query5 = "delete from main_stock_deatils where Serial = $card_Serial";
-             mysql_query($sql_delete_query5);
-
-             
-
+              $sql_delete_query1 = "delete from main_stock_deatils where Serial = $card_Serial";
+             mysql_query($sql_delete_query1);
                array_push($card_range5, $card_Serial);
-              
+
             }
+            //decrease th remaining amount in mainstock_summary
             $sql_update_query1 = "UPDATE mainstock_summary set RemainingAmount=RemainingAmount-$transfered_amount500 where Type=500";
-               mysql_query($sql_update_query1);
+              mysql_query($sql_update_query1);
 
             $serial_range5 = min($card_range5) ." to". max($card_range5);
+
+            //update, insert to graphtable1 to draw the barchart 
             $sql_query8 = "SELECT * FROM graphtable1 WHERE Id = $transfered_fse_id";
             $result8=mysql_query($sql_query8);
             if(mysql_num_rows($result8) == 1){
@@ -354,6 +379,7 @@ if(isset($_POST['transfer']))
             $sql_query6="INSERT INTO graphtable1(Id,Count) VALUES($transfered_fse_id,(SELECT COUNT(*) FROM transferred_stock WHERE FSEId=$transfered_fse_id))" ;
              mysql_query($sql_query6);}
 
+             //update,insert into graphtable2 to draw barchart2
              $sql_query9 = "SELECT * FROM graphtable2 WHERE Type = $card_Type";
              $result9=mysql_query($sql_query9);
             if(mysql_num_rows($result9) == 1){
@@ -365,8 +391,12 @@ if(isset($_POST['transfer']))
              $sql_query7="INSERT INTO graphtable2(Type,Count) VALUES($card_Type,(SELECT COUNT(*) FROM transferred_stock WHERE Type=$card_Type))" ;
                mysql_query($sql_query7);}
 
-               //buffer level
-               $sqlLimit="SELECT * FROM mainstock_summary WHERE Type=500";
+
+
+
+
+               //Buffer Level
+             $sqlLimit="SELECT * FROM mainstock_summary WHERE Type=500";
              $res=mysql_query($sqlLimit);
              while ($data = mysql_fetch_array($res)) 
             {
@@ -380,39 +410,37 @@ if(isset($_POST['transfer']))
                     <b>The stock of Rs.500 has reached the buffer level. Please Refill.</b>
                     </div>";
                   }
-             }
+                
+               
+            
     }
+  }
 
 //for 1000
-    if ($transfered_amount1000!=null or $transfered_amount1000!=0) 
-    {
-          
-             while ($data = mysql_fetch_array($result6)) 
+    if($transfered_amount1000 !=null or $transfered_amount1000!=0)
+  {
+            while ($data = mysql_fetch_array($result6)) 
             {
                 $card_Type = $data['Type'];
                 $card_Serial = $data['Serial'];
-              
-
-              //Insert details in to  transferred_stock
-
-               $sql_insert_query6 = "insert into transferred_stock values
-            ('$transfered_date','$card_Type','$card_Serial','$transfered_fse_id')";
-             mysql_query($sql_insert_query6);
                
-               //delete details from main_stock_deatils table
-             $sql_delete_query6 = "delete from main_stock_deatils where Serial = $card_Serial";
-             mysql_query($sql_delete_query6);
 
-             //push card serial in to array to find the range
+               $sql_insert_query1 = "insert into transferred_stock values
+            ('$transfered_date','$card_Type','$card_Serial','$transfered_fse_id')";
+             mysql_query($sql_insert_query1);
+               
+              $sql_delete_query1 = "delete from main_stock_deatils where Serial = $card_Serial";
+             mysql_query($sql_delete_query1);
                array_push($card_range6, $card_Serial);
-              
-            }
 
+            }
+            //decrease th remaining amount in mainstock_summary
             $sql_update_query1 = "UPDATE mainstock_summary set RemainingAmount=RemainingAmount-$transfered_amount1000 where Type=1000";
-               mysql_query($sql_update_query1);
+              mysql_query($sql_update_query1);
 
             $serial_range6 = min($card_range6) ." to". max($card_range6);
 
+            //update, insert to graphtable1 to draw the barchart 
             $sql_query8 = "SELECT * FROM graphtable1 WHERE Id = $transfered_fse_id";
             $result8=mysql_query($sql_query8);
             if(mysql_num_rows($result8) == 1){
@@ -424,6 +452,7 @@ if(isset($_POST['transfer']))
             $sql_query6="INSERT INTO graphtable1(Id,Count) VALUES($transfered_fse_id,(SELECT COUNT(*) FROM transferred_stock WHERE FSEId=$transfered_fse_id))" ;
              mysql_query($sql_query6);}
 
+             //update,insert into graphtable2 to draw barchart2
              $sql_query9 = "SELECT * FROM graphtable2 WHERE Type = $card_Type";
              $result9=mysql_query($sql_query9);
             if(mysql_num_rows($result9) == 1){
@@ -435,8 +464,12 @@ if(isset($_POST['transfer']))
              $sql_query7="INSERT INTO graphtable2(Type,Count) VALUES($card_Type,(SELECT COUNT(*) FROM transferred_stock WHERE Type=$card_Type))" ;
                mysql_query($sql_query7);}
 
-               //buffer level
-               $sqlLimit="SELECT * FROM mainstock_summary WHERE Type=1000";
+
+
+
+
+               //Buffer Level
+             $sqlLimit="SELECT * FROM mainstock_summary WHERE Type=1000";
              $res=mysql_query($sqlLimit);
              while ($data = mysql_fetch_array($res)) 
             {
@@ -450,10 +483,11 @@ if(isset($_POST['transfer']))
                     <b>The stock of Rs.1000 has reached the buffer level. Please Refill.</b>
                     </div>";
                   }
-
+                
+               
             
     }
-}
+  }
   /*for($i=1;$i<15;$i++){
   
     $sql_query6="INSERT INTO graphtable1(Id,Count) VALUES($i,(SELECT COUNT(*) FROM transferred_stock WHERE FSEId=$i))" ;

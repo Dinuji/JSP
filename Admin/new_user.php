@@ -39,7 +39,7 @@ require("../DB/dbcon.php");
                 </tr>
                 <tr>
                     <td style=" width: 200px"><label class="">Retype Password : </label></td>
-                    <td style=" width: 200px"><input type="password"  name="repassword" placeholder=Minimum lenghth is 7"></td>
+                    <td style=" width: 200px"><input type="password"  name="repassword" placeholder="Minimum lenghth is 7"></td>
                 </tr>
                 <tr>
                     <td style=" width: 200px"><label class="">Type : </label></td>
