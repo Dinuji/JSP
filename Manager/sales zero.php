@@ -37,17 +37,26 @@
       $obj_pdf->SetFont('helvetica', '', 11);  
       $obj_pdf->AddPage();  
       $content = '';  
-      $content .= '   
+      $content .= '  
+
+<center>
+      <h1>  </h1>
+
+      <h2> Damaged Stock </h2>
+
+      <br><br><br>
+
       <table border="0" cellspacing="0" cellpadding="3">  
            <tr>  
                 <th width="30%">Date</th>  
                 <th width="10%">FSE ID</th>  
                 <th width="15%">Type</th>  
                 <th width="45%">Serial Number</th>  
-           </tr>  
+           </tr> 
+
       ';  
       $content .= fetch_data();  
-      $content .= '</table>';
+      $content .= '</table> </center>';
       //$content .= '<img src="/Images/SmarTID.png"  width="50" height="50">';  
       $obj_pdf->writeHTML($content);  
       $obj_pdf->Output('file.pdf', 'I');  
