@@ -3,15 +3,19 @@
  {  
       $output = '';  
       $conn = mysqli_connect("uoc-mydb-instance.ciaqpoqp6i0b.us-east-2.rds.amazonaws.com:3306", "jsproot", "jsprootpass", "jsp");  
-      $sql = "SELECT * FROM damaged_main ORDER BY FSEId ASC";  
+      $sql = "SELECT * FROM employee ORDER BY Id ASC";  
       $result = mysqli_query($conn, $sql);  
       while($row = mysqli_fetch_array($result))  
       {       
       $output .= '<tr>  
-                          <td>'.$row["Date"].'</td>  
-                          <td>'.$row["FSEId"].'</td>  
-                          <td>'.$row["Type"].'</td>  
-                          <td>'.$row["SerialNumber"].'</td>  
+                          <td>'.$row["Id"].'</td>  
+                          <td>'.$row["FirstName"].'</td>
+                          <td>'.$row["LastName"].'</td>  
+                           <td>'.$row["Gender"].'</td>
+                          <td>'.$row["NIC"].'</td>
+                           <td>'.$row["Type"].'</td>
+                           <td>'.$row["EmpId"].'</td>
+
                      </tr>  
                           ';  
       }  
@@ -37,9 +41,7 @@
       $obj_pdf->SetFont('helvetica', '', 11);  
       $obj_pdf->AddPage();  
       $content = '';  
-      $content .= '  
-
-
+      $content .= ' 
 
       <h1 align= "center"> JSP Enterprises </h1>
       <br><br>
@@ -47,21 +49,24 @@
 
       <br><br><br>
 
-      <h2 align= "center"> Damaged Stock </h2>
+      <h2 align= "center"> Staff Details </h2>
 
       <br><br><br>
 
-      <table align="center" border="0" cellspacing="0" cellpadding="3">  
+      <table border="1" cellspacing="0" cellpadding="3">  
            <tr>  
-                <th width="30%">Date</th>  
-                <th width="10%">FSE ID</th>  
-                <th width="15%">Type</th>  
-                <th width="45%">Serial Number</th>  
-           </tr> 
+                <th >ID</th>  
+                <th >First Name</th>  
+                <th >Last Name</th>  
+                <th >Gender</th>
+                <th >NIC</th>
+                <th >Type</th>
+                <th >Epployee Id</th> 
 
+           </tr>  
       ';  
       $content .= fetch_data();  
-      $content .= '</table> ';
+      $content .= '</table>';
       //$content .= '<img src="/Images/SmarTID.png"  width="50" height="50">';  
       $obj_pdf->writeHTML($content);  
       $obj_pdf->Output('file.pdf', 'I');  

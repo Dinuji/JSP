@@ -25,7 +25,7 @@
       require('../tcpdf/tcpdf.php');  
       $obj_pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);  
       $obj_pdf->SetCreator(PDF_CREATOR);  
-      $obj_pdf->SetTitle("Download damaged card summery");  
+      $obj_pdf->SetTitle("Download");  
       $obj_pdf->SetHeaderData('', '', PDF_HEADER_TITLE, PDF_HEADER_STRING);  
       $obj_pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));  
       $obj_pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));  
@@ -38,7 +38,18 @@
       $obj_pdf->SetFont('helvetica', '', 11);  
       $obj_pdf->AddPage();  
       $content = '';  
-      $content .= '   
+      $content .= ' 
+
+      <h1 align= "center"> JSP Enterprises </h1>
+      <br><br>
+      <hr>
+
+      <br><br><br>
+
+      <h2 align= "center"> SIM Details </h2>
+
+      <br><br><br>
+
       <table border="0" cellspacing="0" cellpadding="3">  
            <tr>  
                 <th width="30%">SIM No</th>  
