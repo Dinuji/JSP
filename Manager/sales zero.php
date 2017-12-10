@@ -40,7 +40,7 @@
       $content .= '  
 
 <center>
-      <img src= "../Images/jsp logo.png" height=54px height=74px>
+      
       <h1 align= "center"> JSP Enterprises </h1>
       <br><br>
       <hr>
