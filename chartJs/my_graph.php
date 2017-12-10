@@ -2,9 +2,9 @@
 require('../sources/loginValidate.php');
 header('Content-Type: application/json');
 
-define('DB_HOST', '127.0.0.1');
-define('DB_USERNAME','root');
-define('DB_PASSWORD', '');
+define('DB_HOST', 'uoc-mydb-instance.ciaqpoqp6i0b.us-east-2.rds.amazonaws.com:3306');
+define('DB_USERNAME','jsproot');
+define('DB_PASSWORD', 'jsprootpass');
 define('DB_NAME', 'jsp');
 
 $mysqli=new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD,DB_NAME);
