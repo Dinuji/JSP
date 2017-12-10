@@ -2,7 +2,7 @@
  function fetch_data()  
  {  
       $output = '';  
-      $conn = mysqli_connect("localhost", "root", "", "jsp");  
+      $conn = mysqli_connect("uoc-mydb-instance.ciaqpoqp6i0b.us-east-2.rds.amazonaws.com:3306", "jsproot", "jsprootpass", "jsp");  
       $sql = "SELECT * FROM damaged_main ORDER BY FSEId ASC";  
       $result = mysqli_query($conn, $sql);  
       while($row = mysqli_fetch_array($result))  
