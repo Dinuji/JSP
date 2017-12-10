@@ -40,7 +40,7 @@
       $content .= '  
 
 <center>
-      <h1> JSP Enterprises </h1>
+      <h1 align= "center"> JSP Enterprises </h1>
       <br><br>
       <hr>
 
@@ -50,7 +50,7 @@
 
       <br><br><br>
 
-      <table border="0" cellspacing="0" cellpadding="3">  
+      <table align="center" border="0" cellspacing="0" cellpadding="3">  
            <tr>  
                 <th width="30%">Date</th>  
                 <th width="10%">FSE ID</th>  
