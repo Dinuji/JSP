@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$.ajax({
-		url :"http://localhost/JSP/chartJs/my_graph.php",
+		url :"http://18.217.208.126/JSP/chartJs/my_graph.php",
 		type:"GET",
 		success :function(data){
 			console.log(data);
