@@ -40,13 +40,14 @@
       $content .= '  
 
 <center>
+
       <h1 align= "center"> JSP Enterprises </h1>
       <br><br>
       <hr>
 
       <br><br><br>
 
-      <h2> Damaged Stock </h2>
+      <h2 align= "center"><u> Damaged Stock </u></h2>
 
       <br><br><br>
 
