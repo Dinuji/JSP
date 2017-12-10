@@ -1,5 +1,5 @@
 <?php
-
+require('../sources/loginValidate.php');
 header('Content-Type: application/json');
 
 define('DB_HOST', '127.0.0.1');
@@ -12,14 +12,13 @@ $mysqli=new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD,DB_NAME);
 if(!$mysqli){
 	die("Connection failed ;".$mysqli->error);
 }
-//for($i=1;$i<15;$i++){
-	//$x="INSERT INTO graphtable1(Id,Count) VALUES(3,(SELECT COUNT(*) FROM transferred_stock WHERE FSEId=3))" ;
-	//$result2=$mysqli->query($x);
-//}
+session_start();
+$id=$_SESSION ['userIdInTable'];
 
-$query = sprintf("SELECT Type, Count FROM graphtable2 ORDER BY Type");
 
-$result=$mysqli->query($query);
+$query1 = sprintf("SELECT Date, Amount FROM piegraphtable WHERE FseId=$id");
+
+$result=$mysqli->query($query1);
 
 $data=array();
 foreach ($result as $row){
@@ -31,3 +30,8 @@ $result->close();
 $mysqli->close();
 
 print json_encode($data);
+
+
+
+
+?>

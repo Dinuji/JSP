@@ -52,7 +52,7 @@ require("../DB/dbcon.php");
               <td> <a  href="mystock.php" target="abc"><div class="button2 bt2text" >My Stock</div></a> </td>
               <!--<td> <a  href="shops.php" target="abc"><div class="button2 bt2text" >Shops</div></a> </td> -->
               <td> <a  href="sales.php" target="abc"><div class="button2 bt2text">Sales</div></a> </td>
-              <td> <a  href="../chartJs/doughnut-db-php.html" target="abc"><div class="button2 bt2text">Progress</div></a> </td>
+              <td> <a  href="../chartJs/my_graph.html" target="abc"><div class="button2 bt2text">Progress</div></a> </td>
               
             </tr>
           </table></center>

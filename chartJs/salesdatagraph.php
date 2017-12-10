@@ -4,7 +4,7 @@
 header('Content-Type: application/json');
 
 //database
-define('DB_HOST', 'localhost');
+define('DB_HOST', '127.0.0.1');
 define('DB_USERNAME','root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'jsp');
@@ -17,7 +17,7 @@ if(!$mysqli){
 }
 //query to get data from the table
 
-$query = sprintf("SELECT Date,FSE3,FSE5,FSE6 FROM graphsales WHERE Date BETWEEN DATE_SUB(NOW(),INTERVAL 30 DAY) AND NOW()");
+$query = sprintf("SELECT Date,FSE1,FSE4,FSE6,FSE7,FSE8 FROM graphsales WHERE Date BETWEEN DATE_SUB(NOW(),INTERVAL 100 DAY) AND NOW()");
 
 //execute query
 $result=$mysqli->query($query);

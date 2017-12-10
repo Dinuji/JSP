@@ -23,7 +23,7 @@
                           <img  src="../Images/FSE Images/sale.png" width="120px" height="120px" margin="10px"><br><br>
                           <div class="bttext">Sales</div>
                         </div></a>
-                        <a href="../chartJs/doughnut-db-php.html"><div class="button">
+                        <a href="../chartJs/my_graph.html"><div class="button">
                           <img  src="../Images/FSE Images/pro.png" width="120px" height="120px" margin="10px"><br><br>
                           <div class="bttext">Progress</div>
                         </div></a>

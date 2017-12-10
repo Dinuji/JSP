@@ -71,6 +71,65 @@ require("../DB/dbcon.php");
 
 </div>
 
+
+
+                <div class="h2div" >Delete Shops</div>
+<br>
+
+<div class="div">
+<br>
+
+
+    <form action="#" method="post">
+    <table border="0">
+
+            <tr>
+                    <td ><label class="">Shop Id: </label></td>
+                    <td >
+                    <select name="id">
+                        <option value="Select User" selected ><-------Select Shop---------></option>
+                        <?php
+                            
+                            $sql_query2 ="SELECT * FROM shop ";
+                            $result=mysql_query($sql_query2);
+                            if($result!="")
+                            {
+                                while ($row = mysql_fetch_array($result))
+                                {
+                                    echo '<option value="'.$row['ShopId'].'" >'.$row['Id'].'-'.$row['Name'].'</option>';
+
+                                }
+                            }
+                        ?>
+                    </select>
+
+                </td>
+                </tr>
+
+                <tr><td  colspan="2"><a href="#profile.php" target="abc">
+                  <input class="bttn" type="submit" value="Delete Shop" name="submit"> </input></a></tr></td></tr>
+    </table> </form>
+
+    <?php
+if(isset($_POST['submit'])){
+    $id=$_POST['id'];
+
+    $sql="delete from shop where ShopId='$id'";
+    mysql_query($sql);
+}
+?>
+    
+<br>
+
+</div>
+
+
+
+
+
+
+
+
 <br>
 
 </center>

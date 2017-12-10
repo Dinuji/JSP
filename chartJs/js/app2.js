@@ -17,10 +17,10 @@ $(document).ready(function(){
 				datasets : [
 					{
 						label :'Sold amount',
-						backgroundColor: 'rgba(200,200,200,0.75)',
-						borderColor: 'rgba(200,200,200,0.75)',
-						hoverBackgroundColor:'rgba(200,200,200,1)',
-						hoverBoderColor: 'rgba(200,200,200,1)',
+						backgroundColor: 'rgba(0,128,128,0.75)',
+						borderColor: 'rgba(0,128,128,0.75)',
+						hoverBackgroundColor:'rgba(0,128,128,1)',
+						hoverBoderColor: 'rgba(0,128,128,1)',
 						data:Count
 					}
 				]
