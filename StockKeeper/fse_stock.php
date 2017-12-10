@@ -78,7 +78,7 @@ require("../DB/dbcon.php");
         
 <div class="div">
 
-      <form action="#fse_stock_summery.php" method="post">
+      <form action="#" method="post">
         <table style="margin: auto; width: 600px;padding: 20px">
 
 
@@ -147,5 +147,130 @@ require("../DB/dbcon.php");
 <br>
 
 </center>
+
+
+<?php
+        if(isset($_POST['submit'])){
+            if(empty($_POST['date']) || empty($_POST['id']) || empty($_POST['sales'])){
+                echo "<div class='danger' style='background-color: #CF5151; color:black; font-family: Georgia;'>
+                    <a href='#' class='close' data-dismiss='alert' aria-label='close'>
+                    &times;</a>
+                    <b>Please fill in all the fields.</b>
+                    </div>";
+            }
+
+
+            else{
+
+                $date=$_POST['date'];
+                $id=$_POST['id'];
+                $sales=$_POST['sales'];
+
+                $sql2="select * from graphsales where Date='$date'";
+                $result=mysql_query($sql2);
+
+                if($_POST['id']==1){
+
+                if(mysql_num_rows($result)>0){
+                    $sql3="UPDATE graphsales set FSE1='$sales' where Date='$date'";
+                    mysql_query($sql3);
+
+                    $sql1="INSERT INTO piegraphtable(Date,FSEId,Amount) VALUES('$date','$id','$sales')";
+                    mysql_query($sql1);
+                }
+
+                else{
+
+                $sql="INSERT INTO graphsales(Date,FSE1) VALUES('$date','$sales')";
+                mysql_query($sql);
+
+                $sql1="INSERT INTO piegraphtable(Date,FSEId,Amount) VALUES('$date','$id','$sales')";
+                mysql_query($sql1);
+            }
+
+            }
+
+            else if($_POST['id']==4){
+
+                if(mysql_num_rows($result)>0){
+                    $sql3="UPDATE graphsales set FSE4='$sales' where Date='$date'";
+                    mysql_query($sql3);
+
+                    $sql1="INSERT INTO piegraphtable(Date,FSEId,Amount) VALUES('$date','$id','$sales')";
+                    mysql_query($sql1);
+                }
+                else{
+                $sql="INSERT INTO graphsales(Date,FSE4) VALUES('$date','$sales')";
+                mysql_query($sql);
+
+                $sql1="INSERT INTO piegraphtable(Date,FSEId,Amount) VALUES('$date','$id','$sales')";
+                mysql_query($sql1);
+            }
+
+            }
+
+            else if($_POST['id']==6){
+                if(mysql_num_rows($result)>0){
+                    $sql3="UPDATE graphsales set FSE6='$sales' where Date='$date'";
+                    mysql_query($sql3);
+
+                    $sql1="INSERT INTO piegraphtable(Date,FSEId,Amount) VALUES('$date','$id','$sales')";
+                    mysql_query($sql1);
+                }
+
+                else{
+                $sql="INSERT INTO graphsales(Date,FSE6) VALUES('$date','$sales')";
+                mysql_query($sql);
+
+                $sql1="INSERT INTO piegraphtable(Date,FSEId,Amount) VALUES('$date','$id','$sales')";
+                mysql_query($sql1);
+            }
+
+            }
+
+            else if($_POST['id']==7){
+
+                if(mysql_num_rows($result)>0){
+                    $sql3="UPDATE graphsales set FSE7='$sales' where Date='$date'";
+                    mysql_query($sql3);
+
+                    $sql1="INSERT INTO piegraphtable(Date,FSEId,Amount) VALUES('$date','$id','$sales')";
+                    mysql_query($sql1);
+                }
+                else{
+                $sql="INSERT INTO graphsales(Date,FSE7) VALUES('$date','$sales')";
+                mysql_query($sql);
+
+                $sql1="INSERT INTO piegraphtable(Date,FSEId,Amount) VALUES('$date','$id','$sales')";
+                mysql_query($sql1);
+            }
+
+            }
+
+            else if($_POST['id']==8){
+
+                if(mysql_num_rows($result)>0){
+                    $sql3="UPDATE graphsales set FSE8='$sales' where Date='$date'";
+                    mysql_query($sql3);
+
+                    $sql1="INSERT INTO piegraphtable(Date,FSEId,Amount) VALUES('$date','$id','$sales')";
+                    mysql_query($sql1);
+                }
+                else{
+                $sql="INSERT INTO graphsales(Date,FSE8) VALUES('$date','$sales')";
+                mysql_query($sql);
+
+                $sql1="INSERT INTO piegraphtable(Date,FSEId,Amount) VALUES('$date','$id','$sales')";
+                mysql_query($sql1);
+            }
+
+            }
+
+
+
+            }
+        }
+
+?>
   </body>
 </html>

@@ -25,49 +25,39 @@ require("../DB/dbcon.php");
 <table class="table1 normaltable" >
 
 	<tr>
-		<th class="tablerecharge">ID</th>
-		<th class="tablerecharge">First Name</th>
-		<th class="tablerecharge">Last Name</th>
-		<th class="tablerecharge">Gender</th>
-        <th class="tablerecharge">NIC</th>
-        <th class="tablerecharge">DOB</th>
-        <th class="tablerecharge">Type</th>
-        <th class="tablerecharge">Employee ID</th>
-        <th class="tablerecharge">TP No</th>
-        <th class="tablerecharge">Address</th>
+		<th class="tablerecharge">Date</th>
+		<th class="tablerecharge">FSE 1</th>
+		<th class="tablerecharge">FSE 4</th>
+		<th class="tablerecharge">FSE 6</th>
+        <th class="tablerecharge">FSE 7</th>
+        <th class="tablerecharge">FSE 8</th>
+        
 	</tr>
 
-    <!-- Selecting employee data from the database -->
     <?php
-            $sql_query = "select * from  employee";
+            $sql_query = "select * from  graphsales";
             $result = mysql_query($sql_query);
 
             while ($data = mysql_fetch_array($result)) 
             {
-                $id = $data['Id'];
-                $fname = $data['FirstName'];
-                $lname = $data['LastName'];
-                $gender = $data['Gender'];
-                $nic = $data['NIC'];
-                $dob = $data['DOB'];
-                $type = $data['Type'];
-                $empid = $data['EmpId'];
-                $tpno = $data['TpNum'];
-                $add = $data['Address'];
+                $date = $data['Date'];
+                $f1 = $data['FSE1'];
+                $f4 = $data['FSE4'];
+                $f6 = $data['FSE6'];
+                $f7 = $data['FSE7'];
+                $f8 = $data['FSE8'];
+               
 
         
                 echo '
                 	<tr>
-                		<td class="tablerecharge">'.$id.'</td>
-                		<td class="tablerecharge">'.$fname.'</td>
-                		<td class="tablerecharge">'.$lname.'</td>
-                		<td class="tablerecharge">'.$gender.'</td>
-                        <td class="tablerecharge">'.$nic.'</td>
-                        <td class="tablerecharge">'.$dob.'</td>
-                        <td class="tablerecharge">'.$type.'</td>
-                        <td class="tablerecharge">'.$empid.'</td>
-                        <td class="tablerecharge">'.$tpno.'</td>
-                        <td class="tablerecharge">'.$add.'</td>
+                		<td class="tablerecharge">'.$date.'</td>
+                		<td class="tablerecharge">'.$f1.'</td>
+                		<td class="tablerecharge">'.$f4.'</td>
+                		<td class="tablerecharge">'.$f6.'</td>
+                        <td class="tablerecharge">'.$f7.'</td>
+                        <td class="tablerecharge">'.$f8.'</td>
+                        
                 	</tr>';
 
             }
