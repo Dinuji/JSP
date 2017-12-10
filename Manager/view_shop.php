@@ -72,7 +72,7 @@ require("../DB/dbcon.php");
 </div>
 <br>
                                 <br>
-                    <form action="pdf_ship.php" method="post">
+                    <form action="pdf_shop.php" method="post">
                   <input class="bttn" type="submit" value="Get PDF" name="generate_pdf"> </input>
                     </form>
 
