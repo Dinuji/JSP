@@ -1,7 +1,7 @@
 <?php
 	require "dbcon.php";
 	
-	$fseid=filter_input(INPUT_POST, "fseid");
+	$fseid=(int)filter_input(INPUT_POST, "fseid");
 	$shopname=filter_input(INPUT_POST, "shopname");
 	
 	$ammount=(int)filter_input(INPUT_POST, "ammount");//exist
@@ -42,13 +42,13 @@
 
 	//echo $ammount." ".$price." ".$newAmmount; //testing
 
-	$query="insert into reloadsales(reloadinvoiceNo,fseid,shopname,date,ammount,price) values($lastInvoice,'$fseid','$shopname','$date','$ammount','$price')  ";
+	$query="insert into reloadsales(reloadinvoiceNo,fseid,shopname,date,ammount,price) values($lastInvoice,3,'$shopname','$date',$ammount,$price)  ";
 
 		$row=mysqli_query($con, $query);
 		if($row==1){
-			echo " sell card Reload Ammount ".$ammount ;
+			echo " Sold Reload Ammount ".$ammount ;
 
-			$queryUpdate="update fsereloadstock set ammount=$newAmmount where fseid='$fseid'";
+			$queryUpdate="update reload_transferred_stock set Amount=$newAmmount where FseId=3";
 		    $rowUpdate=mysqli_query($con, $queryUpdate);
 
 		}else{
