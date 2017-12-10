@@ -4,7 +4,7 @@
 	$fseid=filter_input(INPUT_POST, "fseid");
 	//$fseid="fse1";
 
-	$sqlGetAmmount= "select ammount from fsereloadstock where fseid='$fseid'"; 
+	$sqlGetAmmount= "select Amount from reload_transferred_stock where FseId='$fseid'"; 
 
 	$result=mysqli_query($con, $sqlGetAmmount);
 
@@ -13,8 +13,11 @@
 		$ammount= mysqli_fetch_assoc($result);
 		
 	}
+	else{
+		$ammount=0;
+	}
 
-	$response["exist"]=$ammount["ammount"];
+	$response["exist"]=$ammount["Amount"];
 
 	echo json_encode(array("server_response"=>$response));
 
