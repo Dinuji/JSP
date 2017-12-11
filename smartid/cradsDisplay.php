@@ -30,17 +30,17 @@
 	if($qty20>0 ){
 
 		//query to get the count of 30 cards from card30 table
-		$getCount20Query="select count(serialNo) from stock where type='20'";
+		$getCount20Query="select count(SerialNumber) from transferred_stock where type='20'";
 
 		$resultCount20=mysqli_query($con, $getCount20Query);
 		$rowCount20=mysqli_fetch_assoc($resultCount20);
 		//get count from integer
-		$count20 =(int)$rowCount20["count(serialNo)"];
+		$count20 =(int)$rowCount20["count(SerialNumber)"];
 
 		if($qty20<=$count20){
 
 			//query to get 1st cerial number from card30 table
-			$sql20= "select serialNo from stock where type='20' order by serialNo asc limit 1 "; 
+			$sql20= "select SerialNumber from transferred_stock where type='20' order by SerialNumber asc limit 1 "; 
 
 			$result20=mysqli_query($con, $sql20);
 
@@ -48,7 +48,7 @@
 
 				$row20 = mysqli_fetch_assoc($result20);
 				//getting firts cerialNo from card30 table to $firstcard30
-				$firstcard20 = (int)$row20["serialNo"];
+				$firstcard20 = (int)$row20["SerialNumber"];
 
 				if($qty20==1){
 					echo " 20_card ".$firstcard20." ";
@@ -73,24 +73,24 @@
 	if($qty50>0){
 
 		//query to get the count of 50_cards from card50 table
-		$getCount50Query="select count(serialNo) from stock where type='50'";
+		$getCount50Query="select count(SerialNumber) from transferred_stock where type='50'";
 
 		$resultCount50=mysqli_query($con, $getCount50Query);
 		$rowCount50=mysqli_fetch_assoc($resultCount50);
 		//get count from integer
-		$count50 =(int)$rowCount50["count(serialNo)"];
+		$count50 =(int)$rowCount50["count(SerialNumber)"];
 
 		if($qty50<=$count50){
 
 			//query to get 1st cerial number from card50 table
-			$sql50= "select serialNo from stock where type='50' order by serialNo asc limit 1"; //order by serialNo asc limit 1
+			$sql50= "select SerialNumber from transferred_stock where type='50' order by SerialNumber asc limit 1"; //order by SerialNumber asc limit 1
 
 			$result50=mysqli_query($con, $sql50);
 
 			if(mysqli_num_rows($result50)>0 ){
 
 				$row50 = mysqli_fetch_assoc($result50);
-				$firstcard50 = (int)$row50["serialNo"];				
+				$firstcard50 = (int)$row50["SerialNumber"];				
 
 				if($qty50==1){
 					echo " 50_card  ".$firstcard50." ";
@@ -117,17 +117,17 @@
 	if($qty100>0){
 
 		//query to get the count of 100 cards from card100 table
-		$getCount100Query="select count(serialNo) from stock where type='100'";
+		$getCount100Query="select count(SerialNumber) from transferred_stock where type='100'";
 
 		$resultCount100=mysqli_query($con, $getCount100Query);
 		$rowCount100=mysqli_fetch_assoc($resultCount100);
 		//get count from integer
-		$count100 =(int)$rowCount100["count(serialNo)"];
+		$count100 =(int)$rowCount100["count(SerialNumber)"];
 
 		if($qty100<=$count100){
 
 			//query to get 1st cerial number from card100 table
-			$sql100= "select serialNo from stock where type='100'"; 
+			$sql100= "select SerialNumber from transferred_stock where type='100'"; 
 
 			$result100=mysqli_query($con, $sql100);
 
@@ -135,7 +135,7 @@
 
 				$row100 = mysqli_fetch_assoc($result100);
 				//getting firts cerialNo from card100 table to $firstcard100
-				$firstcard100 = (int)$row100["serialNo"];
+				$firstcard100 = (int)$row100["SerialNumber"];
 				
 				if($qty100==1){
 					echo " 100_card ".$firstcard100." ";
@@ -160,17 +160,17 @@
 	if($qty500>0){
 
 		//query to get the count of 500 cards from card500 table
-		$getCount500Query="select count(serialNo) from stock where type='500'";
+		$getCount500Query="select count(SerialNumber) from transferred_stock where type='500'";
 
 		$resultCount500=mysqli_query($con, $getCount500Query);
 		$rowCount500=mysqli_fetch_assoc($resultCount500);
 		//get count from integer
-		$count500 =(int)$rowCount500["count(serialNo)"];
+		$count500 =(int)$rowCount500["count(SerialNumber)"];
 
 		if($qty500<=$count500){
 
 			//query to get 1st cerial number from card500 table
-			$sql500= "select serialNo from stock where type='500' order by serialNo asc limit 1"; 
+			$sql500= "select SerialNumber from transferred_stock where type='500' order by SerialNumber asc limit 1"; 
 
 			$result500=mysqli_query($con, $sql500);
 
@@ -178,7 +178,7 @@
 
 				$row500 = mysqli_fetch_assoc($result500);
 				//getting firts cerialNo from card500 table to $firstcard500
-				$firstcard500 = (int)$row500["serialNo"];
+				$firstcard500 = (int)$row500["SerialNumber"];
 				if($qty500==1){
 					echo " 500_card ".$firstcard500." ";
 				}
@@ -202,17 +202,17 @@
 	if($qty1000>0){
 
 		//query to get the count of 200 cards from card200 table
-		$getCount1000Query="select count(serialNo) from stock where type='1000'";
+		$getCount1000Query="select count(SerialNumber) from transferred_stock where type='1000'";
 
 		$resultCount1000=mysqli_query($con, $getCount1000Query);
 		$rowCount1000=mysqli_fetch_assoc($resultCount1000);
 		//get count from integer
-		$count1000 =(int)$rowCount1000["count(serialNo)"];
+		$count1000 =(int)$rowCount1000["count(SerialNumber)"];
 
 		if($qty1000<=$count1000){
 
 			//query to get 1st cerial number from card200 table
-			$sql1000= "select serialNo from stock where type='1000' order by serialNo asc limit 1"; 
+			$sql1000= "select SerialNumber from transferred_stock where type='1000' order by SerialNumber asc limit 1"; 
 
 			$result1000=mysqli_query($con, $sql1000);
 
@@ -220,7 +220,7 @@
 
 				$row1000 = mysqli_fetch_assoc($result1000);
 				//getting firts cerialNo from card200 table to $firstcard200
-				$firstcard1000 = (int)$row1000["serialNo"];
+				$firstcard1000 = (int)$row1000["SerialNumber"];
 				if($qty1000==1){
 					echo " 1000_card ".$firstcard1000." ";
 				}

@@ -1,8 +1,8 @@
 <?php
 	require "dbcon.php";
 
-	//$fseid=filter_input(INPUT_POST, "fseid");
-	$fseid="fse1";
+	$fseid=(int)filter_input(INPUT_POST, "fseid");
+	//$fseid=1;
 				
 	$count20;
 	$count50;
@@ -16,18 +16,18 @@
 	$firstcard500;
 	$firstcard1000;
 
-	$getCount20Query="select count(serialNo) from fsecardstock where type='20' and fseid='$fseid'";
+	$getCount20Query="select count(SerialNumber) from transferred_stock where type='20' and FSEId=$fseid";
 	$resultCount20=mysqli_query($con, $getCount20Query);
 	if(mysqli_num_rows($resultCount20)>0 ){
 
 		$rowCount20=mysqli_fetch_assoc($resultCount20);
-		$count20 =(int)$rowCount20["count(serialNo)"];	
+		$count20 =(int)$rowCount20["count(SerialNumber)"];	
 	}else{
 		$count20=0;
 	}	
 
 
-	$sql20= "select serialNo from fsecardstock where type='20' and fseid='$fseid' order by serialNo asc limit 1 "; 
+	$sql20= "select SerialNumber from transferred_stock where type='20' and FSEId=$fseid order by SerialNumber asc limit 1 "; 
 
 	$result20=mysqli_query($con, $sql20);
 
@@ -35,34 +35,34 @@
 
 		$row20 = mysqli_fetch_assoc($result20);
 			//getting firts cerialNo from card30 table to $firstcard30
-		$firstcard20 = (int)$row20["serialNo"];		
+		$firstcard20 = (int)$row20["SerialNumber"];		
 	}
 	else{
 		$firstcard20=0;
 	}
 
 
-	$getCount50Query="select count(serialNo) from fsecardstock where type='50' and fseid='$fseid'";
+	$getCount50Query="select count(SerialNumber) from transferred_stock where type='50' and FSEId=$fseid";
 
 	$resultCount50=mysqli_query($con, $getCount50Query);
 	if(mysqli_num_rows($resultCount50)>0 ){
 
 		$rowCount50=mysqli_fetch_assoc($resultCount50);
-		$count50 =(int)$rowCount50["count(serialNo)"];	
+		$count50 =(int)$rowCount50["count(SerialNumber)"];	
 	}
 	else{
 		$count50=0;
 	}
 		
 	//query to get 1st cerial number from card50 table
-	$sql50= "select serialNo from fsecardstock where type='50' and fseid='$fseid' order by serialNo asc limit 1";
+	$sql50= "select SerialNumber from transferred_stock where type='50' and FSEId=$fseid order by SerialNumber asc limit 1";
 
 	$result50=mysqli_query($con, $sql50);
 
 	if(mysqli_num_rows($result50)>0 ){
 
 		$row50 = mysqli_fetch_assoc($result50);
-		$firstcard50 = (int)$row50["serialNo"];				
+		$firstcard50 = (int)$row50["SerialNumber"];				
 								
 	}else{
 		$firstcard50=0;
@@ -70,20 +70,20 @@
 
 
 
-	$getCount100Query="select count(serialNo) from fsecardstock where type='100' and fseid='$fseid'";
+	$getCount100Query="select count(SerialNumber) from transferred_stock where type='100' and FSEId=$fseid";
 
 	$resultCount100=mysqli_query($con, $getCount100Query);
 	if(mysqli_num_rows($resultCount100)>0 ){
 
 		$rowCount100=mysqli_fetch_assoc($resultCount100);
-		$count100 =(int)$rowCount100["count(serialNo)"];	
+		$count100 =(int)$rowCount100["count(SerialNumber)"];	
 	}
 	else{
 		$count100=0;
 	}
 			
 
-	$sql100= "select serialNo from fsecardstock where type='100' and fseid='$fseid' order by serialNo asc limit 1"; 
+	$sql100= "select SerialNumber from transferred_stock where type='100' and FSEId=$fseid order by SerialNumber asc limit 1"; 
 
 	$result100=mysqli_query($con, $sql100);
 
@@ -93,28 +93,28 @@
 
 		$row100 = mysqli_fetch_assoc($result100);
 			//getting firts cerialNo from card100 table to $firstcard100
-		$firstcard100 = (int)$row100["serialNo"];
+		$firstcard100 = (int)$row100["SerialNumber"];
 	}
 	else{
 		$firstcard100=0;
 	}	
 
 
-	$getCount500Query="select count(serialNo) from fsecardstock where type='500' and fseid='$fseid'";
+	$getCount500Query="select count(SerialNumber) from transferred_stock where type='500' and FSEId=$fseid";
 
 	$resultCount500=mysqli_query($con, $getCount500Query);
 	if(mysqli_num_rows($resultCount500)>0 ){
 
 		$rowCount500=mysqli_fetch_assoc($resultCount500);
 		
-	    $count500 =(int)$rowCount500["count(serialNo)"];	
+	    $count500 =(int)$rowCount500["count(SerialNumber)"];	
 	}else{
 		$count500=0;
 	}
 	
 	
 	//query to get 1st cerial number from card500 table
-	$sql500= "select serialNo from fsecardstock where type='500' and fseid='$fseid' order by serialNo asc limit 1"; 
+	$sql500= "select SerialNumber from transferred_stock where type='500' and FSEId=$fseid order by SerialNumber asc limit 1"; 
 
 	$result500=mysqli_query($con, $sql500);
 
@@ -122,26 +122,26 @@
 
 		$row500 = mysqli_fetch_assoc($result500);
 		//getting firts cerialNo from card500 table to $firstcard500
-		$firstcard500 = (int)$row500["serialNo"];
+		$firstcard500 = (int)$row500["SerialNumber"];
 	}else{
 		$firstcard500=0;
 	}
 
 
-	$getCount1000Query="select count(serialNo) from fsecardstock where type='1000' and fseid='$fseid'";
+	$getCount1000Query="select count(SerialNumber) from transferred_stock where type='1000' and FSEId='$fseid'";
 
 	$resultCount1000=mysqli_query($con, $getCount1000Query);
 	if(mysqli_num_rows($resultCount1000)>0 ){
 
 		$rowCount1000=mysqli_fetch_assoc($resultCount1000);
 		
-	$count1000 =(int)$rowCount1000["count(serialNo)"];	
+	$count1000 =(int)$rowCount1000["count(SerialNumber)"];	
 	}else{
 		$count1000=0;
 	}
 	
 		
-	$sql1000= "select serialNo from fsecardstock where type='1000' and fseid='$fseid' order by serialNo asc limit 1"; 
+	$sql1000= "select SerialNumber from transferred_stock where type='1000' and FSEId='$fseid' order by SerialNumber asc limit 1"; 
 
 	$result1000=mysqli_query($con, $sql1000);	
 
@@ -149,7 +149,7 @@
 
 		$row1000 = mysqli_fetch_assoc($result1000);
 		//getting firts cerialNo from card200 table to $firstcard200
-		$firstcard1000 = (int)$row1000["serialNo"];
+		$firstcard1000 = (int)$row1000["SerialNumber"];
 	}else{
 		$firstcard1000=0;
 	}

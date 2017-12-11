@@ -1,10 +1,10 @@
 <?php
 	require "dbcon.php";
 
-	//$fseid=filter_input(INPUT_POST, "fseid");
+	$fseid=(int)filter_input(INPUT_POST, "fseid");
 	//$fseid="fse1";
 
-	$sqlGetAmmount= "select Amount from reload_transferred_stock where FseId=3"; 
+	$sqlGetAmmount= "select Amount from reload_transferred_stock where FseId=$fseid"; 
 
 	$result=mysqli_query($con, $sqlGetAmmount);
 
@@ -12,8 +12,7 @@
 
 		$ammount= mysqli_fetch_assoc($result);
 		
-	}
-	else{
+	}else{
 		$ammount=0;
 	}
 
